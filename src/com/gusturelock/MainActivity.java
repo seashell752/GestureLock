@@ -1,18 +1,19 @@
 package com.gusturelock;
 
-import java.util.List;
-
-import com.gusturelock.LockPatternView.Cell;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Toast;
+
+/*
+ * Author: Ruils 心怀产品梦的安卓码农 
+ * Blog: http://blog.csdn.net/ruils
+ * QQ: 5452781
+ * Email: 5452781@qq.com
+ */
 
 public class MainActivity extends Activity implements OnClickListener {
     // 12-01 18:26:09.907: I/ActivityManager(519): Displayed

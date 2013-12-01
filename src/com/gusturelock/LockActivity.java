@@ -13,6 +13,13 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.widget.Toast;
 
+/*
+ * Author: Ruils 心怀产品梦的安卓码农 
+ * Blog: http://blog.csdn.net/ruils
+ * QQ: 5452781
+ * Email: 5452781@qq.com
+ */
+
 public class LockActivity extends Activity implements
         LockPatternView.OnPatternListener {
     private static final String TAG = "LockActivity";
