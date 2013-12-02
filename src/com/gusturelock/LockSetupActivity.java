@@ -1,12 +1,13 @@
 package com.gusturelock;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.gusturelock.LockPatternView.Cell;
 import com.gusturelock.LockPatternView.DisplayMode;
 
 import android.os.Bundle;
-import android.R.integer;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -64,6 +65,7 @@ public class LockSetupActivity extends Activity implements
             rightButton.setText("");
             rightButton.setEnabled(false);
             choosePattern = null;
+            confirm = false;
             lockPatternView.clearPattern();
             lockPatternView.enableInput();
             break;
@@ -174,19 +176,33 @@ public class LockSetupActivity extends Activity implements
         }
 
         if (choosePattern == null) {
-            choosePattern = pattern;
+            choosePattern = new ArrayList<Cell>(pattern);
+ //           Log.d(TAG, "choosePattern = "+choosePattern.toString());
+//            Log.d(TAG, "choosePattern.size() = "+choosePattern.size());
+            Log.d(TAG, "choosePattern = "+Arrays.toString(choosePattern.toArray()));
+         
             step = STEP_2;
             updateView();
             return;
         }
-
+//[(row=1,clmn=0), (row=2,clmn=0), (row=1,clmn=1), (row=0,clmn=2)]
+//[(row=1,clmn=0), (row=2,clmn=0), (row=1,clmn=1), (row=0,clmn=2)]    
+        
+        Log.d(TAG, "choosePattern = "+Arrays.toString(choosePattern.toArray()));
+        Log.d(TAG, "pattern = "+Arrays.toString(pattern.toArray()));
+        
         if (choosePattern.equals(pattern)) {
+//            Log.d(TAG, "pattern = "+pattern.toString());
+//            Log.d(TAG, "pattern.size() = "+pattern.size());
+            Log.d(TAG, "pattern = "+Arrays.toString(pattern.toArray()));
+           
             confirm = true;
-            step = STEP_4;
-            updateView();
         } else {
-
+            confirm = false;
         }
+      
+        step = STEP_4;
+        updateView();
 
     }
 
