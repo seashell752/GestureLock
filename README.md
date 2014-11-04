@@ -1,6 +1,6 @@
-GustureLock
+GestureLock
 Read me
 
 ===========
 
-Android Gusture Lock
+Android Gesture Lock
